@@ -20,7 +20,11 @@ async def send_welcome(message: types.Message):
 @dp.message_handler(commands=['inline'])
 async def exo(message: types.Message):
     await message.answer('Inline buttons', reply_markup=inline_buttons)
-   
+
+@dp.callback_query_handler(text = "button1")
+async def send_welcome(call: types.CallbackQuery):
+    text = '''button1 bosildi'''
+    await call.message.answer(text, reply_markup=inline_buttons)
 
 
 
