@@ -18,8 +18,6 @@ buttons = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
-
-
 inline_buttons = InlineKeyboardMarkup(
     inline_keyboard=[
         [
@@ -35,3 +33,13 @@ inline_buttons = InlineKeyboardMarkup(
         ]
     ]
 )
+
+lst = ['btn1', 'btn2','btn3','btn4']
+async def generate_btn():
+    btns = ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+    for i in lst:
+        btns.insert(KeyboardButton(text=i))
+    return btns
+
+
+
